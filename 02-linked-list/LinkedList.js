@@ -10,7 +10,7 @@ class LinkedList {
         // case 1:
         // if there is nothing in the list
         // set head to the new node that we are adding
-        if (this.head == NULL) {
+        if (this.head == null) {
             this.head = newNode
         } else {
             // case 2: if there is already something in the list
@@ -23,9 +23,15 @@ class LinkedList {
             // current will be at the last node
             current.setNext(newNode);
         }
+    }
 
-     
-
-
+    display() {
+        let current = this.head;
+        while (current != null) {
+            console.log(current.getData());
+            current = current.getNext();
+        }
     }
 }
+
+module.exports = LinkedList;
