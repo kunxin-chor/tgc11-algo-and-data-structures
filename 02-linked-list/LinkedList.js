@@ -84,6 +84,27 @@ class LinkedList {
         }
         return current.getData();
     }
+
+    count() {
+        let count = 0;
+        let current = this.head;
+        while (current != null) {
+            count += 1;
+            current = current.getNext();
+        }
+        return count;
+    }
+    
+    contains(data) {
+        let current = this.head;
+        while (current != null) {
+            if (current.getData() == data) {
+                return true;
+            }
+            current = current.getNext();
+        }
+        return false;
+    }
 }
 
 module.exports = LinkedList;
