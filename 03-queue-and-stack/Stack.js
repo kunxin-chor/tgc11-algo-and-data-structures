@@ -12,8 +12,14 @@ class Stack {
     }
     pop() {
         let removed = this.data.getAt(0);
-        this.data.deleteAt(0);
+        if (removed != null) {
+             this.data.deleteAt(0);
+        }
+       
         return removed;
+    }
+    peek() {
+        return this.data.getAt(0);
     }
 }
 
