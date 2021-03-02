@@ -55,6 +55,44 @@ class LinkedList {
         }
     }
 
+    insertSorted(number) {
+        let newNode = new Node(number);
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+
+            let indexToInsertAt = 0;
+            // if the list is not empty
+            let prev = null;
+            let current = this.head;
+            while (current != null) {
+
+                if (number < current.getData())
+                {
+                    // found the place to insert at
+                    if (prev != null) {
+                        prev.setNext(newNode);
+                        newNode.setNext(current);
+                    } else {
+                        this.head = newNode;
+                        newNode.setNext(current);
+                    }
+                    
+                    return;
+                }
+
+                prev = current;
+                current = current.getNext(); 
+            }
+
+            // if we reach the end of the loop,
+            // means the new node is supposed to be at the aback
+            prev.setNext(newNode);
+
+        }
+
+    }
+
     deleteAt(index) {
         if (index == 0) {
             
