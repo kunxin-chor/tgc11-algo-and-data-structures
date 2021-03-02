@@ -16,6 +16,7 @@ for (let char of expression) {
             break;
         }
     }
+  
 }
 
 if (stack.peek() == null && error==false) {
